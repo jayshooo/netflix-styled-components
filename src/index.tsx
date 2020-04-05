@@ -1,17 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { GridThemeProvider } from 'styled-bootstrap-grid';
+import { ThemeProvider } from 'styled-components';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+
+const gridTheme = {
+    breakpoints: {
+        lg: 1440,
+        md: 768,
+        sm: 420,
+    },
+    container: {
+        padding: 0,
+    },
+};
+
+const styledTheme = {
+    pointColor: '#E50914;',
+};
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <ThemeProvider theme={ styledTheme }>
+            <GridThemeProvider gridTheme={ gridTheme }>
+                <App />
+            </GridThemeProvider>
+        </ThemeProvider>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
