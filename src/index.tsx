@@ -16,6 +16,9 @@ const gridTheme = {
 };
 
 const styledTheme = {
+    fontSize: {
+        nav: '14px',
+    },
     pointColor: '#E50914;',
 };
 

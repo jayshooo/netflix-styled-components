@@ -1,9 +1,13 @@
 import React from 'react';
 import HeroContainer from '../components/HeroContainer';
+import HeaderContainer from '../components/HeaderContainer';
 
 const Home = () => {
     return (
-        <HeroContainer />
+        <>
+            <HeaderContainer />
+            <HeroContainer />
+        </>
     );
 };
 
